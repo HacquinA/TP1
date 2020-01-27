@@ -1,21 +1,15 @@
 #include <stdio.h>
 
-int monstre = 30;
-int ninjaga = 30;
+float monstre = 30;
+float ninjaga = 30;
 float huss = 5.0;
 int choix = 0;
 int i=100; 
 
 
-
-int rand_a_b(int a, int b){
-			return rand()%(b-a) +a;
-}
-
-
 int main(){
 
-printf("Pv ninjaga: %d\n",monstre);
+printf("Pv Monstre: %d\n",monstre);
 printf("Pv ninjaga: %d\n",ninjaga);
 
 
@@ -30,7 +24,7 @@ printf("Pv ninjaga: %d\n",ninjaga);
 
 	        ninjaga= ninjaga - huss;
 
-		    printf("Pv ninjaga restant: %d\n",ninjaga);
+		    printf("Pv ninjaga restant: %f\n",ninjaga);
 	    	
 	    	printf("Ninjaga contre attaque que fait-elle ?  \n");
 		
@@ -39,13 +33,14 @@ printf("Pv ninjaga: %d\n",ninjaga);
 		    scanf("%d", &choix);
 		    	if(choix == 1){
 			        monstre= monstre - huss;
+			        printf("Tu attaque le monstre perd 5 PV:%f\n",monstre);
 			    }
 		        else if(choix==2){
 			        huss= huss / 4;
-			        printf("Tu te defends tu ne perds pas de vie:%d\n",ninjaga );
+			        printf("Tu te defends tu ne perds pas de vie:%f\n",ninjaga );
 			    }
 
-	        printf("Pv restant monstre: %d\n",monstre);
+	        printf("Pv restant monstre: %f\n",monstre);
 
 	    }
 	

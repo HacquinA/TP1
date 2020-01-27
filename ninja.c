@@ -1,44 +1,77 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int ninjago = 30;
-int ninjaga = 30;
-float huss = 5.0;
-int choix = 0;
-int i=100;                                                                                                                                                                                                                                      
+
+int rand_a_b(int a, int b){
+			return rand()%(b-a) +a;
+}
 
 
 int main(){
 
-printf("Pv ninjaga: %d\n",ninjago);
-printf("Pv ninjaga: %d\n",ninjaga);
+ srand(time(NULL));
+
+float monstre = 30.0;
+float ninjaga = 30.0;
+float huss = 5.0;
+int choix = 0;
+printf("Pv monstre: %f\n",monstre);
+printf("Pv ninjaga: %f\n",ninjaga);
+
+
+
+
+int i=100;
 
 
 	for (i=100; i>=0;i--){
-	    
-	    while(ninjaga >0 && ninjago>0){
 
-	    	printf("Ninjago t'inflige l'attaque 'huss', tu perds 5 PV !\n");
+	    	while(ninjaga >0 && monstre>0){
 
-	        ninjaga= ninjaga - huss;
+		    	int a = 1;
+                int b = 3;
+	            int choixmonstre=(rand_a_b(a,b));
 
-		    printf("Pv ninjaga restant: %d\n",ninjaga);
-	    	
-	    	printf("Ninjaga contre attaque que fait-elle ?  \n");
-		
-		    printf("(1): attaque (2): défense \n");
+			    scanf("%d", &choix);
+			    	if(choix == 1){
+			    	    if(choix== 1){
+				        monstre= monstre - huss;
+    				        printf("monstre t'inflige l'attaque 'huss', tu perds 5 PV !\n");
+    
+    				        ninjaga= ninjaga - huss;
+    
+    					    printf("Pv ninjaga restant: %f\n",ninjaga);
+    				    	
+    				    	printf("Ninjaga contre attaque que fait-elle ?  \n");
+    				    	printf("(1): attaque (2): défense \n");
+			    	    }
+				    	else if(choixmonstre == 2){
+    				        monstre= monstre - huss/4;
+    
+    					    printf("Pv monstre restant: %f\n",ninjaga);
+    				    	
+    				    	printf("Ninjaga contre attaque que fait-elle ?  \n");
+    						printf("(1): attaque (2): défense \n");
+	
+				        }
+			    	}
+			        else if(choix == 2){
+			            if(choixmonstre == 1){
+			            printf("Pv ninjaga restant: %f\n",ninjaga);
 
-		    scanf("%d", &choix);
-		    	if(choix == 1){
-			        ninjago= ninjago - huss;
-			    }
-		        else if(choix==2){
-			        huss= huss / 4;
-			    }
+				        huss= huss / 4;
+				        }
+				        else if(choixmonstre == 2){
+				        printf("Pv ninjaga restant: %f\n",ninjaga);
+				        }
+			        }
 
-	        printf("Pv restant ninjago: %d\n",ninjago);
+		        printf("Pv restant monstre: %f\n",monstre);
 
 	    }
 	
 	}
 return 0;
 }
+
