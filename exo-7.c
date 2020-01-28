@@ -44,7 +44,7 @@ int main(){
 
     	
     	//Action Joueur
-        printf("Attaque(1) ou défense(2) ou poison(3) \n\n");
+        printf("Attaque(1) ou défense(2) ou poison(3) ou antidote(4) si vous êtes empoisonne\n\n");
         printf("------------\n");
         scanf("%d",&choix);
         printf("------------\n\n");
@@ -134,7 +134,7 @@ int main(){
 						if(choixmonstre==1){
 							isNinjagaPoison = 0;
 							printf("Tu te soigne du poison\n");
-							prprintf("Le monstre contre-attaque\n\n");
+							printf("Le monstre contre-attaque\n\n");
 	    					ninjaga -= gigahuss;
 														
 						}
